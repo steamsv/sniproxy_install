@@ -9,10 +9,9 @@ scdn.co
 spotify.com
 spoti.fi
 bilibili.com
-gamer-cds.cdn.hinet.net
-gamer2-cds.cdn.hinet.net
+hinet.net
 gamer.com.tw
-i2.bahamut.com.tw
+bahamut.com.tw
 app-measurement.com
 lin.ee
 line.me
