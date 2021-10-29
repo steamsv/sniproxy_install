@@ -22,6 +22,7 @@ if [ $? -eq 0 ]; then
     rm -rf /usr/local/openresty/nginx/conf/nginx.conf
     rm -rf /root/AdGuardHome
     cp -r /root/sniproxyinstall/AdGuardHome /root/AdGuardHome
+    rm -rf /root/AdGuardHome/AdGuardHome.yaml
 cat>/root/AdGuardHome/AdGuardHome.yaml<<EOF
 bind_host: 0.0.0.0
 bind_port: 3000

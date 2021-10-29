@@ -28,6 +28,7 @@ if [ $? -eq 0 ]; then
     cp /root/sniproxyinstall/sniproxy.conf /etc/sniproxy.conf
     cp /root/sniproxyinstall/sniproxy.service /etc/systemd/system/sniproxy.service
     cp -r /root/sniproxyinstall/AdGuardHome /root/AdGuardHome
+    rm -rf /root/AdGuardHome/AdGuardHome.yaml
 cat>/root/AdGuardHome/AdGuardHome.yaml<<EOF
  bind_host: 0.0.0.0
 bind_port: 3000
