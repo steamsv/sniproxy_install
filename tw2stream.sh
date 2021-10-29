@@ -61,7 +61,7 @@ function MediaUnlockTest_Netflix() {
         MESSAGE='检测到HK1 Netflix不可用 更换IP中\n如未成功会将于10分钟后再次更换\n本信息由BOT自动发送'
         URL="https://api.telegram.org/bot$TOKEN/sendMessage"
         curl -s -X POST $URL -d chat_id=$CHAT_ID -d text="$MESSAGE"
-        curl "https://api.pqs.pw/ipch/hrh2t54ysb" >/dev/null 2>&1 & 
+        curl "https://api.pqs.pw/ipch/w396seva7d" >/dev/null 2>&1 & 
         return;
     fi
     
