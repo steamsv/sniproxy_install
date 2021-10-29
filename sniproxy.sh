@@ -23,6 +23,7 @@ if [ $? -eq 0 ]; then
     cp /root/sniproxyinstall/sniproxy.service /etc/systemd/system/sniproxy.service
     chmod +x /root/sniproxyinstall/ipwhite
     echo "*/5 * * * * /root/sniproxyinstall/ipwhite" >> /var/spool/cron/root
+    /root/sniproxyinstall/ipwhite
     
     systemctl restart sniproxy
     systemctl restart openresty
