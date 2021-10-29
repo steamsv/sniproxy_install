@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ddns.newfuture.cc/schema/v2.8.json",
+  "debug": false,
+  "dns": "cloudflare",
+  "id": "13006363129@163.com",
+  "index4": "public",
+  "index6": "default",
+  "ipv4": [
+    "tw2.dnsunlock.com"
+  ],
+  "cache": false,
+  "proxy": null,
+  "token": "dff135ebf636e3e6aee4dc3c57a2802367777",
+  "ttl": 60
+}
