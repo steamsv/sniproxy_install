@@ -11,7 +11,7 @@ if grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
     yum install -y openresty-resty
     wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_amd64.tar.gz
     tar xvf AdGuardHome_linux_amd64.tar.gz
-    cd /root/AdGuardHome && ./AdGuardHome -s install
+    cd /root/AdGuardHome && ./AdGuardHome -s install && cd /root/
 
 else
     echo "This script only supports CentOS."
