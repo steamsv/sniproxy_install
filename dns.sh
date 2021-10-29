@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if grep -Eqi "CentOS" /etc/issue || grep -Eq "CentOS" /etc/*-release; then
+    cd ..
     yum install epel-release -y
     yum install bind-utils -y
     yum install libev -y
