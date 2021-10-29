@@ -34,5 +34,5 @@ if [ $? -eq 0 ]; then
     systemctl enable AdGuardHome
     echo "DNS部署成功"
 else
-    echo "dnsmasq安装失败, 请检查仓库状况"
+    echo "安装失败, 请检查仓库状况"
 fi
