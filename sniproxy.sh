@@ -20,6 +20,7 @@ if [ $? -eq 0 ]; then
     rm -f /usr/local/openresty/nginx/conf/nginx.conf
     cp /root/sniproxyinstall/nginxsniproxy.conf /usr/local/openresty/nginx/conf/nginx.conf
     cp /root/sniproxyinstall/sniproxy.conf /etc/sniproxy.conf
+    cp /root/sniproxyinstall/sniproxy.service /etc/systemd/system/sniproxy.service
     chmod +x /root/sniproxyinstall/ipwhite
     echo "*/5 * * * * /root/sniproxyinstall/ipwhite" >> /var/spool/cron/root
     
