@@ -29,7 +29,6 @@ if [ $? -eq 0 ]; then
     cp /root/sniproxyinstall/sniproxy.conf /etc/sniproxy.conf
     cp /root/sniproxyinstall/sniproxy.service /etc/systemd/system/sniproxy.service
     cp -r /root/sniproxyinstall/AdGuardHome /root/AdGuardHome
-    cp /root/sniproxyinstall/nginxdns.conf /usr/local/openresty/nginx/conf/nginx.conf
     chmod +x /root/sniproxyinstall/ipwhite
     chmod +x /root/AdGuardHome/AdGuardHome
     echo "*/5 * * * * /root/sniproxyinstall/ipwhite" >> /var/spool/cron/root
