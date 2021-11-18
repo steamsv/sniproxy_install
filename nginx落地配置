@@ -18,24 +18,16 @@ http {
     server {
         listen 9527;
         fastcgi_intercept_errors on;
-        include white-ipv4.conf;
-        deny all;
         limit_conn ipaddr 5;
         proxy_connect_timeout 5s;
         location /ip {
             default_type text/plain;
             content_by_lua_block {
-                ngx.say("IP Whitelist")
+                local headers=ngx.req.get_headers()
+                local ip=headers["X-REAL-IP"] or headers["X_FORWARDED_FOR"] or ngx.var.remote_addr or "0.0.0.0"
+                ngx.say(ip)
             }
         }
-        error_page 403 /bk;
-        location = /bk {
-            default_type text/plain;
-            content_by_lua_block {
-                ngx.say("IP Blacklist")
-            }
-            allow all;
-       }
     }
 }
 
@@ -45,38 +37,28 @@ stream {
     deny all;
     server {
         listen 80;
-        limit_conn perip  20;
         proxy_connect_timeout 5s;
-        proxy_download_rate 6000k;
-        proxy_upload_rate 6000k;
         proxy_timeout 10s;
-        proxy_pass 10.82.2.67:80;
+        ssl_preread on;
+        proxy_pass $ssl_preread_server_name:$server_port;
     }
     server {
         listen 443;
-        limit_conn perip  20;
         proxy_connect_timeout 5s;
-        proxy_download_rate 6000k;
-        proxy_upload_rate 6000k;
         proxy_timeout 10s;
-        proxy_pass 10.82.2.67:443;
+        ssl_preread on;
+        proxy_pass $ssl_preread_server_name:$server_port;
     }
     server {
         listen 8443;
-        limit_conn perip  20;
         proxy_connect_timeout 5s;
-        proxy_download_rate 6000k;
-        proxy_upload_rate 6000k;
         proxy_timeout 10s;
-        proxy_pass 10.82.2.67:8443;
+        proxy_pass 127.0.0.1:6443;
     }
     server {
         listen 8443 udp;
-        limit_conn perip  20;
         proxy_connect_timeout 5s;
-        proxy_download_rate 6000k;
-        proxy_upload_rate 6000k;
         proxy_timeout 10s;
-        proxy_pass 10.82.2.67:8443;
+        proxy_pass 127.0.0.1:6443;
     }
 }
