@@ -23,3 +23,5 @@ echo "net.ipv4.tcp_fin_timeout = 15" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_max_syn_backlog = 16384" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_tw_reuse = 1" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_max_orphans = 131072" >> /etc/sysctl.conf
+
+sysctl -p
