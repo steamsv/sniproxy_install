@@ -15,6 +15,8 @@ echo "* * * * * /root/unlock/ddns" >> /var/spool/cron/root
 echo "* * * * * /root/unlock/ipwhite" >> /var/spool/cron/root
 curl -L https://github.com/txthinking/brook/releases/latest/download/brook_linux_amd64 -o /usr/bin/brook
 chmod +x /usr/bin/brook
+chmod +x /root/unlock/ddns
+chmod +x /root/unlock/ipwhite
 wget -P /lib/systemd/system/ https://github.com/steamsv/brook/raw/master/brook.service
 systemctl enable brook
 systemctl start brook

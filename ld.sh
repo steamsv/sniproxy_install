@@ -14,6 +14,7 @@ tar xvf AdGuardHome_linux_amd64.tar.gz
 echo "* * * * * /root/unlock/ddns" >> /var/spool/cron/root
 curl -L https://github.com/txthinking/brook/releases/latest/download/brook_linux_amd64 -o /usr/bin/brook
 chmod +x /usr/bin/brook
+chmod +x /root/unlock/ddns
 wget -P /lib/systemd/system/ https://github.com/steamsv/brook/raw/master/brook.service
 systemctl enable brook
 systemctl start brook
