@@ -9,4 +9,5 @@ systemctl enable openresty
 mv /root/unlock/white-ipv4.conf /usr/local/openresty/nginx/conf/white-ipv4.conf
 mv /root/unlock/zfnginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 echo "* * * * * /root/unlock/ipwhite" >> /var/spool/cron/root
-systemctl start openresty
+systemctl restart openresty
+systemctl status openresty

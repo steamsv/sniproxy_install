@@ -15,3 +15,5 @@ wget -P /lib/systemd/system/ https://github.com/steamsv/brook/raw/master/brook.s
 systemctl enable brook
 systemctl start brook
 systemctl restart openresty
+systemctl status openresty
+systemctl status brook
