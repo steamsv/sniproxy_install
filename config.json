@@ -3,7 +3,7 @@
   "debug": false,
   "dns": "cloudflare",
   "id": "13006363129@163.com",
-  "index4": "url:www.clientip.org",
+  "index4": "url:https://www.clientip.org",
   "index6": "default",
   "ipv4": [
     "xx.dnsunlock.com"
